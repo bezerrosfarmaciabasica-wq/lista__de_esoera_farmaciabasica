@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+body {
+  @apply bg-floresta-950 text-emerald-50 antialiased;
+  background-image: radial-gradient(60rem 40rem at 50% -10%, rgba(31,157,99,0.14), transparent 70%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .campo {
+    @apply w-full rounded-lg border border-floresta-700 bg-floresta-900 px-3 py-2.5 text-sm text-white
+           placeholder:text-emerald-100/40 focus:border-ouro-500 focus:outline-none focus:ring-2 focus:ring-ouro-500/40;
+  }
+  .rotulo { @apply mb-1 block text-sm font-medium text-ouro-300; }
+  .erro { @apply mt-1 text-xs text-red-300; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition
+                focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ouro-400
+                disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-ouro { @apply btn bg-ouro-500 text-floresta-950 hover:bg-ouro-400; }
+  .btn-verde { @apply btn bg-esmeralda-600 text-white hover:bg-esmeralda-500; }
+  .btn-sec { @apply btn border border-floresta-700 bg-floresta-800 text-emerald-50 hover:bg-floresta-700; }
+  .btn-perigo { @apply btn border border-red-400/40 bg-red-500/10 text-red-200 hover:bg-red-500/20; }
+  .painel { @apply rounded-2xl border border-floresta-700 bg-floresta-900/80 p-5; }
+}
+
+.print-only { display: none; }
+
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  html, body { background: #fff !important; background-image: none !important; color: #000 !important; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  .print-secao { break-before: page; }
+  .print-secao:first-of-type { break-before: auto; }
+  .print-only table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  .print-only th, .print-only td { border: 1px solid #444; padding: 2px 4px; text-align: left; vertical-align: top; }
+  .print-only th { background: #e5e5e5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-only tr { break-inside: avoid; }
+  .print-only thead { display: table-header-group; }
+}
