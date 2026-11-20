@@ -57,3 +57,4 @@ Obs.: repositório privado só publica no Pages em planos pagos do GitHub; no pl
 - **Windows/Mac (Chrome ou Edge):** ícone de instalar na barra de endereço.
 - **Android (Chrome):** menu ⋮ > Instalar aplicativo.
 - **iPhone/iPad (Safari):** Compartilhar > Adicionar à Tela de Início.
+- atualizado
